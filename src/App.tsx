@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {Native01} from "./lessons/native/01/Native01";
+import {FilterClasswork} from "./lessons/react/filter/FilterClasswork";
 
 function App() {
     return <>
@@ -8,8 +8,8 @@ function App() {
         {/*<Map/>*/}
         {/*<Buttons/>*/}
         {/*<UseState/>*/}
-        {/*<Filter/>*/}
-        <Native01/>
+        <FilterClasswork/>
+        {/*<Native01/>*/}
     </>
 }
 

@@ -1,18 +1,5 @@
 import React, {MouseEvent} from 'react';
-
-type ButtonPropsType = {
-    name: string
-    callBack: () => void
-}
-
-export const Button = (props: ButtonPropsType) => {
-    const onClickHandler = () => {
-        props.callBack()
-        // console.log("Subscriber name: ")
-    }
-
-    return <button onClick={onClickHandler}>{props.name}</button>
-};
+import {Button} from "./Button";
 
 export const Buttons = () => {
 
@@ -64,10 +51,10 @@ export const Buttons = () => {
         <button onClick={forOne}>1</button>
         <button onClick={() => forTwo(100200)}>2</button>
 
-        <Button name="YouTube channel 1" callBack={() => buttonOneFun("Vasya")}/>
+        <Button name="YouTube channel 1" callback={() => buttonOneFun("Vasya")}/>
 
-        <Button name="YouTube channel 2" callBack={() => buttonTwoFun("Petya", 21)}/>
+        <Button name="YouTube channel 2" callback={() => buttonTwoFun("Petya", 21)}/>
 
-        <Button name="Just button" callBack={() => buttonThreeFun()}/>
+        <Button name="Just button" callback={() => buttonThreeFun()}/>
     </>
 };
