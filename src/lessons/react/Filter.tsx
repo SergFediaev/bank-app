@@ -40,14 +40,14 @@ export const Filter = () => {
 
     // currentMoney = money.filter(filteredMoney => filteredMoney.banknote === filter)
 
-    const onClickFilterHandler = (buttonName: FilterType) => {
+    const onClickFilterHandler = (filterName: FilterType) => {
         debugger
 
-        // localButtonState = buttonName
+        // localButtonState = filterName
 
-        setFilter(buttonName)
+        setFilter(filterName)
 
-        console.log("Отконсолим, отконсолить кнопку: ", buttonName)
+        console.log("Отконсолим, отконсолить кнопку: ", filterName)
         // currentMoney = money.filter(filteredMoney => filteredMoney.banknote === filter.toLowerCase())
         // setMoney(currentMoney)
 
@@ -76,17 +76,16 @@ export const Filter = () => {
             buttons={
                 [
                     {
-                        name: "All",
-                        filter: () => onClickFilterHandler("all"),
+                        buttonName: "All",
+                        callback: () => onClickFilterHandler("all"),
                     },
                     {
-                        name: "Rubles",
-                        filter: () => onClickFilterHandler("ruble"),
-
+                        buttonName: "Rubles",
+                        callback: () => onClickFilterHandler("ruble"),
                     },
                     {
-                        name: "Dollars",
-                        filter: () => onClickFilterHandler("dollar"),
+                        buttonName: "Dollars",
+                        callback: () => onClickFilterHandler("dollar"),
 
                     },
                 ]
@@ -107,9 +106,9 @@ type FilterHomeworkPropsType = {
 }
 
 type ButtonsType = {
-    name: string
+    buttonName: string
+    callback: () => void
     // buttonFilter: string
-    filter: () => void
 }
 
 export const FilterHomework = (props: FilterHomeworkPropsType) => {
@@ -123,6 +122,7 @@ export const FilterHomework = (props: FilterHomeworkPropsType) => {
                 </li>
             })}
         </ul>
-        {props.buttons.map((button, index) => <Button key={index} name={button.name} callBack={button.filter}/>)}
+        {props.buttons.map((button, index) => <Button key={index} name={button.buttonName}
+                                                      callBack={button.callback}/>)}
     </>
 };

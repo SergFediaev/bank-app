@@ -4,7 +4,7 @@ import {Native01} from "./lessons/native/01/Native01";
 
 function App() {
     return <>
-        learn react
+        Learn react, classworks & homeworks:
         {/*<Map/>*/}
         {/*<Buttons/>*/}
         {/*<UseState/>*/}
