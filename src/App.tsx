@@ -1,14 +1,21 @@
 import React from 'react';
 import './App.css';
-import {FilterClasswork} from "./lessons/react/filter/FilterClasswork";
+import {AppBank} from "./lessons/react/app_bank/AppBank";
 
 function App() {
+
     return <>
-        Learn react, classworks & homeworks:
+        Learn react, classwork & homeworks:
         {/*<Map/>*/}
         {/*<Buttons/>*/}
         {/*<UseState/>*/}
-        <FilterClasswork/>
+
+
+        {/*<Bank inputMoney={inputMoney}/>*/}
+
+        <AppBank/>
+
+
         {/*<Native01/>*/}
     </>
 }
