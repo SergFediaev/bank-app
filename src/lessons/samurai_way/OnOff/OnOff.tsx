@@ -30,6 +30,6 @@ const ButtonOff = ({enabled}: OnOffPropsType) => <div className='button'>
     <span className='inner'>Off</span>
 </div>
 
-const Background = (props: ButtonColorType) => <div className='background' style={{backgroundColor: props.color}}></div>
+const Background = ({color}: ButtonColorType) => <div className='background' style={{backgroundColor: color}}></div>
 
-const Indicator = (props: IndicatorColorType) => <div className='indicator' style={{backgroundColor: props.color}}></div>
+const Indicator = ({color}: IndicatorColorType) => <div className='indicator' style={{backgroundColor: color}}></div>
