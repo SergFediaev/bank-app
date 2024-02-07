@@ -1,7 +1,7 @@
 import {StudentType} from "../02/02";
 import {CityTestType, GovernmentBuildingType, HouseTestType} from "../02/02.test";
 
-debugger
+// debugger
 
 export const sum = (a: number, b: number) => {
     return a + b;
@@ -10,7 +10,7 @@ export const sum = (a: number, b: number) => {
 const result = sum(sum(1, 2), sum(3, 4))
 
 export const addTechnology = (student: StudentType, technology: string) => {
-    debugger
+    // debugger
     student.technologies.push({
         id: new Date().getDate(),
         title: technology,

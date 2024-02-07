@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {value02} from "./lessons/native/02/02";
+// import {value02} from "./lessons/native/02/02";
 import {sum} from "./lessons/native/03/03";
 
 let a = sum;
@@ -13,7 +13,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <React.StrictMode>
-        {value02}
+        {/*{value02}*/}
         <App/>
     </React.StrictMode>
 );

@@ -1,16 +1,23 @@
 import React from 'react';
 import './App.css';
-import {AppBank} from "./lessons/react/app_bank/AppBank";
+import {Accordion} from "./lessons/samurai_way/Accordion/Accordion";
+import {Rating} from "./lessons/samurai_way/Rating/Rating";
 
 function App() {
     return <>
-        Learn react, classwork & homeworks:
         {/*<Map/>*/}
         {/*<Buttons/>*/}
         {/*<UseState/>*/}
         {/*<FilterClasswork/>*/}
         {/*<Native01/>*/}
-        <AppBank/>
+        {/*<AppBank/>*/}
+        <Accordion title={"Menu"} collapsed={true}/>
+        <Accordion title={"Users"} collapsed={false}/>
+        <Rating value={1}/>
+        <Rating value={2}/>
+        <Rating value={3}/>
+        <Rating value={4}/>
+        <Rating value={5}/>
     </>
 }
 

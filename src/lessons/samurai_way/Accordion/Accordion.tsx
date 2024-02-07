@@ -2,18 +2,23 @@ import React from "react";
 
 type AccordionPropsType = {
     title: string
-    collapsed: boolean
+    collapsed?: boolean
 }
 
-export function Accordion(props: AccordionPropsType) {
-    if (props.collapsed) {
-        return <AccordionTitle titleValue={props.title}/>
-    } else {
-        return <div>
-            <AccordionTitle titleValue={props.title}/>
-            <AccordionMenu/>
-        </div>
-    }
+export const AccordionTern = (props: AccordionPropsType) => props.collapsed ?
+    <AccordionTitle titleValue={props.title}/> :
+    <div>
+        <AccordionTitle titleValue={props.title}/>
+        <AccordionMenu/>
+    </div>
+
+export const Accordion = (props: AccordionPropsType) => {
+    console.log('Accordion rendering')
+
+    return <div>
+        <AccordionTitle titleValue={props.title}/>
+        {!props.collapsed && <AccordionMenu/>}
+    </div>
 }
 
 type AccordionTitlePropsType = {
@@ -22,7 +27,7 @@ type AccordionTitlePropsType = {
 
 const AccordionTitle = (props: AccordionTitlePropsType) =>
     // <h3>{console.log('Rendering Acc title')}{props.titleValue} RIGHT?</h3>
-    <h3>{props.titleValue} RIGHT?</h3>
+    <h3>{props.titleValue}</h3>
 
 // function AccordionTitle(props: any) {
 //     return <h3>Title is: {props.title}</h3>
