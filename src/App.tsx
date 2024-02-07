@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
-import {Accordion} from "./lessons/samurai_way/Accordion/Accordion";
-import {Rating} from "./lessons/samurai_way/Rating/Rating";
+import {OnOff} from "./lessons/samurai_way/OnOff/OnOff";
 
 function App() {
     return <>
@@ -11,13 +10,15 @@ function App() {
         {/*<FilterClasswork/>*/}
         {/*<Native01/>*/}
         {/*<AppBank/>*/}
-        <Accordion title={"Menu"} collapsed={true}/>
-        <Accordion title={"Users"} collapsed={false}/>
-        <Rating value={1}/>
-        <Rating value={2}/>
-        <Rating value={3}/>
-        <Rating value={4}/>
-        <Rating value={5}/>
+        {/*<Accordion title={"Menu"} collapsed={true}/>*/}
+        {/*<Accordion title={"Users"} collapsed={false}/>*/}
+        {/*<Rating value={1}/>*/}
+        {/*<Rating value={2}/>*/}
+        {/*<Rating value={3}/>*/}
+        {/*<Rating value={4}/>*/}
+        {/*<Rating value={5}/>*/}
+        <OnOff enabled={true}/>
+        <OnOff enabled={false}/>
     </>
 }
 
