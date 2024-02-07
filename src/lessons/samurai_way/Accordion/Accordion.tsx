@@ -21,14 +21,15 @@ type AccordionTitlePropsType = {
 }
 
 const AccordionTitle = (props: AccordionTitlePropsType) =>
-    <h3>{console.log('Rendering Acc title')}{props.titleValue} RIGHT?</h3>
+    // <h3>{console.log('Rendering Acc title')}{props.titleValue} RIGHT?</h3>
+    <h3>{props.titleValue} RIGHT?</h3>
 
 // function AccordionTitle(props: any) {
 //     return <h3>Title is: {props.title}</h3>
 // }
 
 const AccordionMenu = () => <ul>
-    {console.log('Rendering Acc menu')}
+    {/*{console.log('Rendering Acc menu')}*/}
     <li>Item 1</li>
     <li>Item 2</li>
     <li>Item 3</li>

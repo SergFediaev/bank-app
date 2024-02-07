@@ -1,6 +1,5 @@
 import React from 'react';
 import './LessonApp.css';
-import Technologies from "../../Technologies";
 import {Header} from "./Header";
 import Footer from "./Footer";
 
@@ -10,7 +9,7 @@ const LessonApp = () => {  // современная запись стрелоч
     return <div>
         {/*<div className="LessonApp">Hey there</div>*/}
         <Header title="LessonApp title from props "/>
-        <Technologies/>
+        {/*<Technologies/>*/}
         <Footer/>
         {/*<Rating value={2}/>*/}
         {/*<Accordion title="Title for Acc" collapsed={false}/>*/}
