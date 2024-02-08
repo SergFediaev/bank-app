@@ -1,4 +1,5 @@
 export type HouseTestType = {
+    id?: number
     buildedAt: number
     repaired: boolean
     address: AddressTestType
