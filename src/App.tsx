@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {OnOff} from "./lessons/samurai_way/OnOff/OnOff";
+import InputClasswork from "./lessons/microtasks/input/InputClasswork";
 
 function App() {
     return <>
@@ -17,8 +17,9 @@ function App() {
         {/*<Rating value={3}/>*/}
         {/*<Rating value={4}/>*/}
         {/*<Rating value={5}/>*/}
-        <OnOff enabled={true}/>
-        <OnOff enabled={false}/>
+        {/*<OnOff enabled={true}/>*/}
+        {/*<OnOff enabled={false}/>*/}
+        <InputClasswork/>
     </>
 }
 

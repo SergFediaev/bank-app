@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {BankMoneyFilter} from "./BankMoneyFilter";
-import {ButtonType} from "../buttons/Button";
+import {ButtonType} from "../../microtasks/buttons/Button";
 
 type MoneyType = {
     banknote: string
