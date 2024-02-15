@@ -1,8 +1,13 @@
-import React from 'react';
-import './App.css';
-import InputClasswork from "./lessons/microtasks/input/InputClasswork";
+import React from 'react'
+import './App.css'
+import {OnOff} from './lessons/samurai_way/OnOff/lesson/OnOff'
+import {UncontrolledAccordion} from './lessons/samurai_way/UncontrolledAccordion/UncontrolledAccordion'
+import {Accordion} from './lessons/samurai_way/Accordion/Accordion'
+import {Rating} from './lessons/samurai_way/Rating/Rating'
 
 function App() {
+    console.log('App rendering')
+
     return <>
         {/*<Map/>*/}
         {/*<Buttons/>*/}
@@ -10,17 +15,20 @@ function App() {
         {/*<FilterClasswork/>*/}
         {/*<Native01/>*/}
         {/*<AppBank/>*/}
-        {/*<Accordion title={"Menu"} collapsed={true}/>*/}
-        {/*<Accordion title={"Users"} collapsed={false}/>*/}
-        {/*<Rating value={1}/>*/}
-        {/*<Rating value={2}/>*/}
-        {/*<Rating value={3}/>*/}
-        {/*<Rating value={4}/>*/}
-        {/*<Rating value={5}/>*/}
+        <Accordion title={'Menu'} collapsed={true}/>
+        <Accordion title={'Users'} collapsed={false}/>
+        <Rating value={1}/>
+        <Rating value={2}/>
+        <Rating value={3}/>
+        <Rating value={4}/>
+        <Rating value={5}/>
         {/*<OnOff enabled={true}/>*/}
         {/*<OnOff enabled={false}/>*/}
-        <InputClasswork/>
+        {/*<InputClasswork/>*/}
+        <OnOff/>
+        <UncontrolledAccordion title="Menu"/>
+        <UncontrolledAccordion title="User"/>
     </>
 }
 
-export default App;
+export default App
