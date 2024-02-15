@@ -4,6 +4,7 @@ import {OnOff} from './lessons/samurai_way/OnOff/lesson/OnOff'
 import {UncontrolledAccordion} from './lessons/samurai_way/UncontrolledAccordion/UncontrolledAccordion'
 import {Accordion} from './lessons/samurai_way/Accordion/Accordion'
 import {Rating} from './lessons/samurai_way/Rating/Rating'
+import {UncontrolledRating} from './lessons/samurai_way/UncontrolledRating/UncontrolledRating'
 
 function App() {
     console.log('App rendering')
@@ -28,6 +29,11 @@ function App() {
         <OnOff/>
         <UncontrolledAccordion title="Menu"/>
         <UncontrolledAccordion title="User"/>
+        <UncontrolledRating value={1}/>
+        <UncontrolledRating value={2}/>
+        <UncontrolledRating value={3}/>
+        <UncontrolledRating value={4}/>
+        <UncontrolledRating value={5}/>
     </>
 }
 
