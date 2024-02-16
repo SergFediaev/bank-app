@@ -9,7 +9,7 @@ import {UncontrolledRating} from './lessons/samurai_way/UncontrolledRating/Uncon
 function App() {
     console.log('App rendering')
 
-    return <>
+    return <div className="App">
         {/*<Map/>*/}
         {/*<Buttons/>*/}
         {/*<UseState/>*/}
@@ -29,12 +29,12 @@ function App() {
         <OnOff/>
         <UncontrolledAccordion title="Menu"/>
         <UncontrolledAccordion title="User"/>
-        <UncontrolledRating value={1}/>
-        <UncontrolledRating value={2}/>
-        <UncontrolledRating value={3}/>
-        <UncontrolledRating value={4}/>
-        <UncontrolledRating value={5}/>
-    </>
+        <UncontrolledRating/>
+        <UncontrolledRating/>
+        <UncontrolledRating/>
+        <UncontrolledRating/>
+        <UncontrolledRating/>
+    </div>
 }
 
 export default App

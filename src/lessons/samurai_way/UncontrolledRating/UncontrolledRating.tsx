@@ -1,12 +1,12 @@
 import React, {useState} from 'react'
 
-type RatingPropsType = {
-    value: ValueType
-}
-
 type ValueType = 0 | 1 | 2 | 3 | 4 | 5
 
-export const UncontrolledRating = (props: RatingPropsType) => {
+type StarPropsType = {
+    selected: boolean
+}
+
+export const UncontrolledRating = () => {
     const [value, setValue] = useState<ValueType>(0)
 
     return <div>
@@ -23,14 +23,10 @@ export const UncontrolledRating = (props: RatingPropsType) => {
     </div>
 }
 
-type StarPropsType = {
-    selected: boolean
-}
-
 function Star(props: StarPropsType) {
     if (props.selected) {
-        return <span><b>Star* </b></span>
+        return <span><b>Star * </b></span>
     } else {
-        return <span>Star* </span>
+        return <span>Star </span>
     }
 }

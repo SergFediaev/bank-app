@@ -19,6 +19,7 @@ export function OnOff(props: PropsType) {
         display: 'inline-block',
         padding: '2px',
         backgroundColor: on ? 'green' : 'white',
+        cursor: 'pointer',
     }
 
     const offStyle = {
@@ -29,6 +30,7 @@ export function OnOff(props: PropsType) {
         marginLeft: '2px',
         padding: '2px',
         backgroundColor: on ? 'white' : 'red',
+        cursor: 'pointer',
     }
 
     const indicatorStyle = {
