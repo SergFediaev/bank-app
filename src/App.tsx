@@ -16,8 +16,8 @@ function App() {
         {/*<FilterClasswork/>*/}
         {/*<Native01/>*/}
         {/*<AppBank/>*/}
-        <Accordion title={'Menu'} collapsed={true}/>
-        <Accordion title={'Users'} collapsed={false}/>
+        <Accordion title="Menu" collapsed={true}/>
+        <Accordion title="Users" collapsed={false}/>
         <Rating value={1}/>
         <Rating value={2}/>
         <Rating value={3}/>

@@ -7,20 +7,22 @@ type AccordionPropsType = {
 
 type AccordionTitlePropsType = {
     titleValue: string
+    toggleCollapsed: () => void
 }
 
 export const UncontrolledAccordion = (props: AccordionPropsType) => {
     const [collapsed, setCollapsed] = useState<boolean>(false)
 
+    const toggleCollapsedHandler = () => setCollapsed(!collapsed)
+
     return <div>
-        <AccordionTitle titleValue={props.title}/>
-        <button onClick={() => setCollapsed(!collapsed)}>Toggle</button>
+        <AccordionTitle toggleCollapsed={toggleCollapsedHandler} titleValue={props.title}/>
         {!collapsed && <AccordionMenu/>}
     </div>
 }
 
-const AccordionTitle = (props: AccordionTitlePropsType) =>
-    <h3>{props.titleValue}</h3>
+const AccordionTitle = ({toggleCollapsed, titleValue}: AccordionTitlePropsType) => <h3
+    onClick={toggleCollapsed} style={{cursor: 'pointer'}}>{titleValue}</h3>
 
 const AccordionMenu = () => <ul>
     <li>Item 1</li>
