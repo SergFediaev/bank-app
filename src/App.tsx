@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css'
-import {User} from './lessons/native/06/06-callbacks'
+import {UncontrolledRating} from './lessons/samurai_way/UncontrolledRating/UncontrolledRating'
+import {UncontrolledAccordion} from './lessons/samurai_way/UncontrolledAccordion/UncontrolledAccordion'
 
 function App() {
     console.log('App rendering')
@@ -23,14 +24,14 @@ function App() {
         {/*<OnOff enabled={false}/>*/}
         {/*<InputClasswork/>*/}
         {/*<OnOff/>*/}
-        {/*<UncontrolledAccordion title="Menu"/>*/}
-        {/*<UncontrolledAccordion title="User"/>*/}
-        {/*<UncontrolledRating/>*/}
-        {/*<UncontrolledRating/>*/}
-        {/*<UncontrolledRating/>*/}
-        {/*<UncontrolledRating/>*/}
-        {/*<UncontrolledRating/>*/}
-        <User/>
+        <UncontrolledAccordion title="Menu"/>
+        <UncontrolledAccordion title="User"/>
+        <UncontrolledRating/>
+        <UncontrolledRating/>
+        <UncontrolledRating/>
+        <UncontrolledRating/>
+        <UncontrolledRating/>
+        {/*<User/>*/}
     </div>
 }
 
