@@ -1,12 +1,13 @@
 import React, {useState} from 'react'
 import './App.css'
-import {RatingValueType} from './lessons/samurai_way/ControlledRating/ControlledRating'
-import {UncontrolledAccordion} from './lessons/samurai_way/UncontrolledAccordion/UncontrolledAccordion'
+import {ControlledOnOff} from './lessons/samurai_way/OnOff/homework/ControlledOnOff'
 
 function App() {
     console.log('App rendering')
 
-    let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
+    // let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
+
+    const [enabled, setEnabled] = useState<boolean>(false)
 
     return <div className="App">
         {/*<Map/>*/}
@@ -26,8 +27,8 @@ function App() {
         {/*<OnOff enabled={false}/>*/}
         {/*<InputClasswork/>*/}
         {/*<OnOff/>*/}
-        <UncontrolledAccordion title="Menu"/>
-        <UncontrolledAccordion title="User"/>
+        {/*<UncontrolledAccordion title="Menu"/>*/}
+        {/*<UncontrolledAccordion title="User"/>*/}
         {/*<UncontrolledRating/>*/}
         {/*<UncontrolledRating/>*/}
         {/*<UncontrolledRating/>*/}
@@ -35,6 +36,7 @@ function App() {
         {/*<UncontrolledRating/>*/}
         {/*<User/>*/}
         {/*<LessonUncontrolledRating/>*/}
+        <ControlledOnOff enabled={enabled} setEnabled={setEnabled}/>
     </div>
 }
 

@@ -2,7 +2,7 @@
     text-align: center;
     width: 500px;
     margin: 50px auto;
-    border: solid 1px red;
+    /*border: solid 1px red;*/
 }
 
 .App-logo {
@@ -13,7 +13,8 @@
 @media (prefers-reduced-motion: no-preference) {
     .App-logo {
     }
-        animation: App-logo-spin infinite 20s linear;
+
+    animation: App-logo-spin infinite 20s linear;
 }
 
 .App-header {

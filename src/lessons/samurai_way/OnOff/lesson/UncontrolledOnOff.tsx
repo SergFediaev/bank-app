@@ -4,7 +4,7 @@ type PropsType = {
     on?: boolean
 }
 
-export function OnOff(props: PropsType) {
+export function UncontrolledOnOff() {
 
     console.log('OnOff rendering')
 
