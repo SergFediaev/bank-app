@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import './App.css'
 import {ControlledOnOff} from './lessons/samurai_way/OnOff/homework/ControlledOnOff'
+import {ControlledAccordion} from './lessons/samurai_way/OnOff/homework/ControlledAccordion'
 
 function App() {
     console.log('App rendering')
@@ -8,6 +9,8 @@ function App() {
     // let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
 
     const [enabled, setEnabled] = useState<boolean>(false)
+
+    const [collapsed, setCollapsed] = useState<boolean>(false)
 
     return <div className="App">
         {/*<Map/>*/}
@@ -37,6 +40,7 @@ function App() {
         {/*<User/>*/}
         {/*<LessonUncontrolledRating/>*/}
         <ControlledOnOff enabled={enabled} setEnabled={setEnabled}/>
+        <ControlledAccordion title="Users" collapsed={collapsed} setCollapsed={setCollapsed}/>
     </div>
 }
 
