@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import './App.css'
 import {ControlledOnOff} from './lessons/samurai_way/OnOff/homework/ControlledOnOff'
 import {ControlledAccordion} from './lessons/samurai_way/OnOff/homework/ControlledAccordion'
+import {UncontrolledOnOff} from './lessons/samurai_way/OnOff/lesson/UncontrolledOnOff'
 
 function App() {
     console.log('App rendering')
@@ -41,6 +42,7 @@ function App() {
         {/*<LessonUncontrolledRating/>*/}
         <ControlledOnOff enabled={enabled} setEnabled={setEnabled}/>
         <ControlledAccordion title="Users" collapsed={collapsed} setCollapsed={setCollapsed}/>
+        <UncontrolledOnOff onChange={setEnabled}/> {enabled.toString()}
     </div>
 }
 
