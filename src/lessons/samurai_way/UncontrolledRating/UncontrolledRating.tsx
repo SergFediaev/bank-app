@@ -30,5 +30,5 @@ const Star = ({onClickHandler, selected}: StarPropsType) => <span
     style={{
         fontWeight: selected ? '900' : 'normal',
         color: selected ? 'red' : 'black',
-        cursor: 'pointer'
-    }}>Star {selected && '*'}</span>
+        cursor: 'pointer',
+    }}>Star {selected && '* '}</span>
