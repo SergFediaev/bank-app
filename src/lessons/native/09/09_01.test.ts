@@ -60,7 +60,7 @@ test(`value type test`, () => {
     expect(adminsCount).toEqual(101)
 })
 
-test(`reference type test`, () => {
+test(`object reference type test`, () => {
     const address = {
         title: 'Minsk',
     }
