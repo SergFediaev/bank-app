@@ -7,11 +7,15 @@ type StarPropsType = {
     onClickHandler: () => void
 }
 
-export const UncontrolledRating = () => {
-    const [value, setValue] = useState<ValueType>(0)
+export const UncontrolledRating = ({defaultValue, onChange}: {
+    defaultValue?: ValueType,
+    onChange?: (value: ValueType) => void
+}) => {
+    const [value, setValue] = useState<ValueType>(defaultValue ? defaultValue : 0)
     const [rated, setRated] = useState<boolean>(false)
 
     const onClickHandler = (value: ValueType, isRated?: boolean) => {
+        if (onChange) onChange(value)
         setRated(isRated ?? false)
         setValue(value)
     }

@@ -8,4 +8,8 @@ export default {
 
 const onClickHandler = () => action('Clicked!')
 
-export const ChangeableUncontrolledOnOff = () => <UncontrolledOnOff onChange={onClickHandler}/>
+export const EnabledUncontrolledOnOff = () => <UncontrolledOnOff defaultOn={true} onChange={onClickHandler}/>
+
+export const DisabledUncontrolledOnOff = () => <UncontrolledOnOff defaultOn={false} onChange={onClickHandler}/>
+
+export const DefaultInputValue = () => <input type="text" defaultValue="Default changeable input text."/>
