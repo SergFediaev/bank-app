@@ -4,15 +4,31 @@ type ControlledAccordionPropsType = {
     title: string
     collapsed: boolean
     setCollapsed: (collapsed: boolean) => void
+    items: ItemType[]
+    onClick: (value: any) => void
 }
 
-export const ControlledAccordion = ({title, collapsed, setCollapsed}: ControlledAccordionPropsType) => {
+type ItemType = {
+    title: string
+    value: any
+}
+
+export const ControlledAccordion = ({
+                                        title,
+                                        collapsed,
+                                        setCollapsed,
+                                        items,
+                                        onClick,
+                                    }: ControlledAccordionPropsType) => {
 
     const onTitleClickHandler = () => setCollapsed(!collapsed)
 
     return <div>
         <AccordionTitle title={title} onClick={onTitleClickHandler}/>
-        {!collapsed && <AccordionMenu/>}
+        {!collapsed && <AccordionMenu
+            items={items}
+            onClick={onClick}
+        />}
     </div>
 }
 
@@ -25,10 +41,14 @@ const AccordionTitle = ({title, onClick}: AccordionTitlePropsType) => <h3
     style={{cursor: 'pointer'}}
     onClick={onClick}>{title}</h3>
 
-const AccordionMenu = () => <ul>
-    <li>User 1</li>
-    <li>User 2</li>
-    <li>User 3</li>
-    <li>User 4</li>
-    <li>User 5</li>
+type AccordionMenuPropsType = {
+    items: ItemType[]
+    onClick: (value: any) => void
+}
+
+const AccordionMenu = ({items, onClick}: AccordionMenuPropsType) => <ul>
+    {items.map((item, index) => <li
+        key={index}
+        onClick={() => onClick(item.value)}
+    >{item.title}</li>)}
 </ul>

@@ -25,27 +25,47 @@ export const FirstStory: Story = {
 
 const setCollapsedHandler = action('setCollapsedHandler()')
 
+const onClickHandler = action('Item clicked!')
+
 export const CollapsedControlledAccordion = () => {
+
     return <ControlledAccordion
         title={'Collapsed controlled accordion'}
         collapsed={true}
         setCollapsed={setCollapsedHandler}
+        items={[]}
+        onClick={onClickHandler}
     />
 }
 
+const users = [
+    {title: 'Dymich', value: 1},
+    {title: 'Valera', value: 2},
+    {title: 'Artem', value: 3},
+    {title: 'Viktor', value: 4},
+]
+
 export const OpenedControlledAccordion = () => {
+
     return <ControlledAccordion
         title={'Opened controlled accordion'}
         collapsed={false}
         setCollapsed={setCollapsedHandler}
+        items={users}
+        onClick={onClickHandler}
     />
 }
 
 export const ClickableControlledAccordion = () => {
     const [collapsed, setCollapsed] = useState(false)
+
     return <ControlledAccordion
         title={'Clickable controlled accordion'}
         collapsed={collapsed}
         setCollapsed={setCollapsed}
+        items={users}
+        onClick={(value) => {
+            alert(`User ID: ${value} clicked!`)
+        }}
     />
 }

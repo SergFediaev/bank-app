@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import './App.css'
-import Associative from './lessons/microtasks/associative/Associative'
+import {Select} from './lessons/react/select/Select'
 
 function App() {
     console.log('App rendering')
@@ -10,6 +10,8 @@ function App() {
     const [enabled, setEnabled] = useState<boolean>(false)
 
     const [collapsed, setCollapsed] = useState<boolean>(false)
+
+    const [selectedValue, setSelectedValue] = useState(1)
 
     return <div className="App">
         {/*<Map/>*/}
@@ -41,8 +43,19 @@ function App() {
         {/*<ControlledOnOff enabled={enabled} setEnabled={setEnabled}/>*/}
         {/*<ControlledAccordion title="Users" collapsed={collapsed} setCollapsed={setCollapsed}/>*/}
         {/*<UncontrolledOnOff onChange={setEnabled}/> {enabled.toString()}*/}
-        <Associative/>
+        {/*<Associative/>*/}
+        <Select
+            value={selectedValue}
+            onChange={(value) => setSelectedValue(value)}
+            items={selectItems}
+        />
     </div>
 }
+
+export const selectItems = [
+    {title: 'Moscow', value: 1},
+    {title: 'Minsk', value: 2},
+    {title: 'Kiev', value: 3},
+]
 
 export default App
