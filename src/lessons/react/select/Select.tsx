@@ -28,10 +28,10 @@ export const Select = ({
         closeMenu()
     }
 
-    const title = items.find(item => item.value === value)
+    const item = items.find(item => item.value === value)
 
     return <div className={s.selectMenu}>
-        <h3 onClick={toggleMenuHandler}>{title?.title}{showMenu ? ' -' : ' +'}</h3>
+        <h3 onClick={toggleMenuHandler}>{item?.title}{showMenu ? ' -' : ' +'}</h3>
         {showMenu && <ul onMouseLeave={closeMenu}>
             {items.map((item, index) => <li
                 key={index}

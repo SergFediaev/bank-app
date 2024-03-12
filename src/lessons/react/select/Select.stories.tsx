@@ -4,7 +4,7 @@ import {action} from '@storybook/addon-actions'
 import {useState} from 'react'
 
 export default {
-    title: 'Select',
+    title: 'Select homework',
     component: Select,
 }
 
