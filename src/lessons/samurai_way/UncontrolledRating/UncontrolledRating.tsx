@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {memo, useState} from 'react'
 
 type ValueType = 0 | 1 | 2 | 3 | 4 | 5
 
@@ -21,11 +21,11 @@ export const UncontrolledRating = ({defaultValue, onChange}: {
     }
 
     return <div>
-        <Star onClickHandler={() => onClickHandler(rated ? 0 : 1, !rated)} selected={value > 0}/>
-        <Star onClickHandler={() => onClickHandler(2)} selected={value > 1}/>
-        <Star onClickHandler={() => onClickHandler(3)} selected={value > 2}/>
-        <Star onClickHandler={() => onClickHandler(4)} selected={value > 3}/>
-        <Star onClickHandler={() => onClickHandler(5)} selected={value > 4}/>
+        <StarMemo onClickHandler={() => onClickHandler(rated ? 0 : 1, !rated)} selected={value > 0}/>
+        <StarMemo onClickHandler={() => onClickHandler(2)} selected={value > 1}/>
+        <StarMemo onClickHandler={() => onClickHandler(3)} selected={value > 2}/>
+        <StarMemo onClickHandler={() => onClickHandler(4)} selected={value > 3}/>
+        <StarMemo onClickHandler={() => onClickHandler(5)} selected={value > 4}/>
     </div>
 }
 
@@ -36,3 +36,5 @@ const Star = ({onClickHandler, selected}: StarPropsType) => <span
         color: selected ? 'red' : 'black',
         cursor: 'pointer',
     }}>Star {selected && '* '}</span>
+
+const StarMemo = memo(Star)

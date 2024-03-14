@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {memo} from 'react'
 
 type ControlledAccordionPropsType = {
     title: string
@@ -24,8 +24,8 @@ export const ControlledAccordion = ({
     const onTitleClickHandler = () => setCollapsed(!collapsed)
 
     return <div>
-        <AccordionTitle title={title} onClick={onTitleClickHandler}/>
-        {!collapsed && <AccordionMenu
+        <AccordionTitleMemo title={title} onClick={onTitleClickHandler}/>
+        {!collapsed && <AccordionMenuMemo
             items={items}
             onClick={onClick}
         />}
@@ -52,3 +52,6 @@ const AccordionMenu = ({items, onClick}: AccordionMenuPropsType) => <ul>
         onClick={() => onClick(item.value)}
     >{item.title}</li>)}
 </ul>
+
+const AccordionTitleMemo = memo(AccordionTitle)
+const AccordionMenuMemo = memo(AccordionMenu)

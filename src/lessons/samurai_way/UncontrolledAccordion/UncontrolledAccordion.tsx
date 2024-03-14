@@ -1,4 +1,4 @@
-import React, {useReducer} from 'react'
+import React, {memo, useReducer} from 'react'
 import {reducer, TOGGLE_COLLAPSED} from './reducer'
 
 type AccordionPropsType = {
@@ -19,11 +19,11 @@ export const UncontrolledAccordion = (props: AccordionPropsType) => {
     const toggleCollapsedHandler = () => dispatch({type: TOGGLE_COLLAPSED})
 
     return <div>
-        <AccordionTitle toggleCollapsed={() => {
+        <AccordionTitleMemo toggleCollapsed={() => {
             debugger;
             toggleCollapsedHandler()
         }} titleValue={props.title}/>
-        {!state.collapsed && <AccordionMenu/>}
+        {!state.collapsed && <AccordionMenuMemo/>}
     </div>
 }
 
@@ -35,3 +35,6 @@ const AccordionMenu = () => <ul>
     <li>Item 2</li>
     <li>Item 3</li>
 </ul>
+
+const AccordionTitleMemo = memo(AccordionTitle)
+const AccordionMenuMemo = memo(AccordionMenu)
