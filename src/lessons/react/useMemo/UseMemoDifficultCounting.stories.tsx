@@ -15,11 +15,11 @@ export const DifficultCountingExample = () => {
         let tempResultA = 1 // чтобы не происходило замыкания.
 
         for (let i = 1; i <= a; i++) {
-            let fake = 0
-            while (fake < 100_000_000) {
-                fake++
-                const fakeValue = Math.random()
-            }
+            // let fake = 0
+            // while (fake < 100_000_000) {
+            //     fake++
+            //     const fakeValue = Math.random()
+            // }
 
             tempResultA *= i
         }
