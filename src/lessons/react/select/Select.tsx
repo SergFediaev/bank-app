@@ -17,6 +17,7 @@ export const Select = ({
                            onChange,
                            items,
                        }: SelectPropsType) => {
+    console.log('Select rendering!')
     const [showMenu, setShowMenu] = useState<boolean>(false)
 
     const toggleMenuHandler = () => setShowMenu(!showMenu)

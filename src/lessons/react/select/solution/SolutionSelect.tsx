@@ -13,6 +13,7 @@ type ItemsType = {
 }
 
 export const SolutionSelect = (props: SolutionSelectPropsType) => {
+    console.log('SolutionSelect rendering!')
     const [active, setActive] = useState(false)
     const [hoveredElementValue, setHoveredElementValue] = useState(props.value)
 
