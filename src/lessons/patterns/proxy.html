@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Proxy</title>
+</head>
+<body>
+<h1>Pattern: proxy</h1>
+
+<script>
+    const _a = {
+        yo(message) {
+            console.log(message)
+        }
+    }
+
+    const proxyA = {
+        yo(message) {
+            if (message === 'Not allowed message') message = 'Censored ***'
+            _a.yo(message)
+        }
+    }
+
+    proxyA.yo('Not allowed message')
+</script>
+</body>
+</html>

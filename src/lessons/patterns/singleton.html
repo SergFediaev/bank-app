@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Singleton</title>
+</head>
+<body>
+<h1>Pattern: singleton</h1>
+
+<script>
+    class Api {
+        static singleton = null
+
+        constructor() {
+            if (Api.singleton !== null) {
+                return Api.singleton
+            }
+
+            Api.singleton = this
+            // return this
+        }
+
+        getUsers() {
+            console.log('get')
+        }
+
+        createUser() {
+            console.log('set')
+        }
+    }
+
+    const api = new Api()
+    api.createUser()
+    api.getUsers()
+
+    console.log(new Api() === new Api())
+</script>
+</body>
+</html>

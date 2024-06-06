@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adapter</title>
+</head>
+<body>
+<h1>Pattern: adapter</h1>
+
+<script>
+    class Map {
+        load() {
+            // Много логики...
+        }
+
+        setMarker(longitude, latitude) {
+            // Много логики...
+        }
+
+        setCenter(lg, lt) {
+            // Много логики...
+        }
+    }
+
+    class MapApplication {
+        constructor(map) {
+            this.map = map
+        }
+
+        getShops() {
+            // Много логики...
+        }
+
+        findShop() {
+            // Много логики...
+        }
+
+        drawMap() {
+            this.map.load()
+            this.map.setCenter(1.222, 3.321)
+        }
+    }
+
+    class GoogleMapAdapter {
+        constructor(googleMap) {
+            this.map = googleMap
+        }
+
+        load() {
+            this.map.start()
+        }
+
+        setMarker(longitude, lt) {
+            alert('Markers not available in google map!')
+        }
+
+        setCenter(lg, lt) {
+            this.map.center({long: lg, lat: lt})
+        }
+
+    }
+
+    const map = new GoogleMap()
+    const googleMapAdapter = new GoogleMapAdapter(map)
+    const app = new MapApplication(googleMapAdapter)
+</script>
+</body>
+</html>

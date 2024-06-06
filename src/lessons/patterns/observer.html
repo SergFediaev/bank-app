@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Observer</title>
+</head>
+<body>
+<h1>Pattern: observer / publisher-subscriber</h1>
+
+<script>
+    class GlobalClock {
+        secs = 0
+        subscribers = []
+
+        constructor() {
+            setInterval(() => {
+                // Событие:
+                this.secs++
+                console.log('Global clock: ', this.secs)
+
+                // Уведомление подписчиков о событии:
+                this.subscribers.forEach(subscriber => {
+                    subscriber(this.secs) // clock.render(secs)
+                })
+            }, 1_000)
+        }
+    }
+
+    const globalClock = new GlobalClock()
+
+    class Clock1 {
+        constructor() {
+            this.element = document.createElement('div')
+            document.body.appendChild(this.element)
+        }
+
+        render(secs) {
+            this.element.innerHTML = 'Clock 1: ' + secs
+        }
+    }
+
+    const clock1 = new Clock1()
+    globalClock.subscribers.push(clock1.render.bind(clock1))
+
+    class Clock2 {
+        constructor() {
+            this.element = document.createElement('div')
+            document.body.appendChild(this.element)
+        }
+
+        render(secs) {
+            this.element.innerHTML = 'Clock 2: ' + secs
+        }
+    }
+
+    const clock2 = new Clock2()
+    globalClock.subscribers.push(clock2.render.bind(clock2))
+
+    // Создаём подписчика (функцию, которая принимает секунды от глобальных часов)
+    // и тут же подписываем его на тик глобальных часов (добавляем в массив подписчиков глобальных часов).
+    globalClock.subscribers.push((secs) => {
+        console.log('Subscriber 3: ', secs)
+    })
+</script>
+</body>
+</html>
